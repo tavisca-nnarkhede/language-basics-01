@@ -22,36 +22,36 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
 
         public static int FindDigit(string equation)
         {
-            string EquPart1=equation.Split('*')[0];
-            string EquPart2=equation.Split('*')[1].Split('=')[0];
-            string EquPart3=equation.Split('=')[1];
-            int Result=0;
-            var Answer=0.0;
-            String Answer1=null, Answer2=null;
-            if (EquPart1.Contains("?"))
+            string EPart1=equation.Split('*')[0];
+            string EPart2=equation.Split('*')[1].Split('=')[0];
+            string EPart3=equation.Split('=')[1];
+            int result=0;
+            var answer=0.0;
+            String answer1=null, answer2=null;
+            if (EPart1.Contains("?"))
             {
-                Answer=double.Parse(EquPart2) / double.Parse(EquPart3);
-                Answer1=EquPart1;
+                answer=double.Parse(EPart3) / double.Parse(EPart2);
+                answer1=EPart1;
             }
-            else if (EquPart2.Contains("?"))
+            else if (EPart2.Contains("?"))
             {
-                Answer=double.Parse(EquPart3) / double.Parse(EquPart1);
-                Answer1=EquPart2;
+                answer=double.Parse(EPart3) / double.Parse(EPart1);
+                answer1=EPart2;
             }
-            else if (EquPart3.Contains("?"))
+            else if (EPart3.Contains("?"))
             {
-                Answer=double.Parse(EquPart1) * double.Parse(EquPart2);
-                Answer1=EquPart3;
+                answer=double.Parse(EPart1) * double.Parse(EPart2);
+                answer1=EPart3;
             }
-            Answer2=Answer.ToString();
-            if (Answer1.Length==Answer2.Length)
+            answer2=answer.ToString();
+            if (answer1.Length==answer2.Length)
             {
-                for (int i=0;i<Answer2.Length;i++)
+                for (int i=0;i<answer2.Length;i++)
                 {
-                    if (Answer1[i]!=Answer2[i])
+                    if (answer1[i]!=answer2[i])
                     {
-                        Result=int.Parse(Answer2[i].ToString());
-                        return Result;
+                        result=int.Parse(answer2[i].ToString());
+                        return result;
                     }
 
                 }
