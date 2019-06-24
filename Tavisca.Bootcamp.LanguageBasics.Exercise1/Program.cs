@@ -22,36 +22,36 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
 
         public static int FindDigit(string equation)
         {
-            string a=equation.Split('*')[0];
-            string b=equation.Split('*')[1].Split('=')[0];
-            string c=equation.Split('=')[1];
-            int result=0;
-            var ans=0.0;
-            String ans1=null, ans2=null;
-            if (a.Contains("?"))
+            string EquPart1=equation.Split('*')[0];
+            string EquPart2=equation.Split('*')[1].Split('=')[0];
+            string EquPart3=equation.Split('=')[1];
+            int Result=0;
+            var Answer=0.0;
+            String Answer1=null, Answer2=null;
+            if (EquPart1.Contains("?"))
             {
-                ans=double.Parse(c) / double.Parse(b);
-                ans1=a;
+                Answer=double.Parse(EquPart2) / double.Parse(EquPart3);
+                Answer1=EquPart1;
             }
-            else if (b.Contains("?"))
+            else if (EquPart2.Contains("?"))
             {
-                ans=double.Parse(c) / double.Parse(a);
-                ans1=b;
+                Answer=double.Parse(EquPart3) / double.Parse(EquPart1);
+                Answer1=EquPart2;
             }
-            else if (c.Contains("?"))
+            else if (EquPart3.Contains("?"))
             {
-                ans=double.Parse(a) * double.Parse(b);
-                ans1=c;
+                Answer=double.Parse(EquPart1) * double.Parse(EquPart2);
+                Answer1=EquPart3;
             }
-            ans2=ans.ToString();
-            if (ans1.Length==ans2.Length)
+            Answer2=Answer.ToString();
+            if (Answer1.Length==Answer2.Length)
             {
-                for (int i=0;i<ans2.Length;i++)
+                for (int i=0;i<Answer2.Length;i++)
                 {
-                    if (ans1[i]!=ans2[i])
+                    if (Answer1[i]!=Answer2[i])
                     {
-                        result=int.Parse(ans2[i].ToString());
-                        return result;
+                        Result=int.Parse(Answer2[i].ToString());
+                        return Result;
                     }
 
                 }
