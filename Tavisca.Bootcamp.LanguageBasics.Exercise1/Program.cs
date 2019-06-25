@@ -3,7 +3,7 @@ using System;
 namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
 {
     class Program
-    {
+   {
         static void Main(string[] args)
         {
             Test("42*47=1?74", 9);
@@ -22,26 +22,26 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
 
         public static int FindDigit(string equation)
         {
-            string EPart1=equation.Split('*')[0];
-            string EPart2=equation.Split('*')[1].Split('=')[0];
-            string EPart3=equation.Split('=')[1];
+            string equationPart1=equation.Split('*')[0];
+            string equationPart2=equation.Split('*')[1].Split('=')[0];
+            string equationPart3=equation.Split('=')[1];
             int result=0;
             var answer=0.0;
-            String answer1=null, answer2=null;
-            if (EPart1.Contains("?"))
+            string answer1=null, answer2=null;
+            if (equationPart1.Contains("?"))
             {
-                answer=double.Parse(EPart3) / double.Parse(EPart2);
-                answer1=EPart1;
+                answer=double.Parse(equationPart3) / double.Parse(equationPart2);
+                answer1= equationPart1;
             }
-            else if (EPart2.Contains("?"))
+            else if (equationPart2.Contains("?"))
             {
-                answer=double.Parse(EPart3) / double.Parse(EPart1);
-                answer1=EPart2;
+                answer=double.Parse(equationPart3) / double.Parse(equationPart1);
+                answer1= equationPart2;
             }
-            else if (EPart3.Contains("?"))
+            else if (equationPart3.Contains("?"))
             {
-                answer=double.Parse(EPart1) * double.Parse(EPart2);
-                answer1=EPart3;
+                answer=double.Parse(equationPart1) * double.Parse(equationPart2);
+                answer1= equationPart3;
             }
             answer2=answer.ToString();
             if (answer1.Length==answer2.Length)
